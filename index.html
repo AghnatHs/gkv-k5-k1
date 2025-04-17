@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>GKV Kelompok 5</title>
+
+    <!-- Tailwind -->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+    <!-- Plotly + D3 -->
+    <script
+      src="https://cdn.plot.ly/plotly-3.0.1.min.js"
+      charset="utf-8"
+    ></script>
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+  </head>
+
+  <body class="min-h-screen flex flex-col items-center p-4 bg-gray-50">
+    <header class="w-full max-w-7xl mb-8 text-center">
+      <h1 class="text-3xl font-bold text-blue-800 mb-2">
+        Produksi Padi Sumatera
+      </h1>
+      <p class="text-gray-600">
+        Data produksi padi di provinsi-provinsi Sumatera dari tahun 1993 hingga
+        2020
+      </p>
+    </header>
+
+    <main class="w-full max-w-7xl bg-white rounded-xl shadow-lg p-6">
+      <div class="mb-4 flex flex-col md:flex-row justify-between items-center">
+        <div class="mb-4 md:mb-0">
+          <h2 class="text-xl font-semibold text-gray-800">
+            Visualisasi Data Produksi
+          </h2>
+          <p class="text-gray-500 text-sm">
+            Sumber:
+            <a
+              href="https://www.kaggle.com/datasets/ardikasatria/datasettanamanpadisumatera"
+              target="_blank"
+              >https://www.kaggle.com/datasets/ardikasatria/datasettanamanpadisumatera</a
+            >
+          </p>
+        </div>
+        <div id="legend-controls" class="flex gap-2"></div>
+      </div>
+
+      <div
+        id="graph"
+        class="w-full h-[600px] border border-gray-100 rounded-lg"
+      ></div>
+
+      <div class="mb-4 flex flex-col md:flex-row justify-between items-center">
+        <div class="mb-4 md:mb-0">
+          <h2 class="text-xl font-semibold text-gray-800">
+            GRAPH 2
+          </h2>
+          <p class="text-gray-500 text-sm">
+            Sumber:
+            <a
+              href="https://www.kaggle.com/datasets/ardikasatria/datasettanamanpadisumatera"
+              target="_blank"
+              >https://www.kaggle.com/datasets/ardikasatria/datasettanamanpadisumatera</a
+            >
+          </p>
+        </div>
+        <div id="legend-controls" class="flex gap-2"></div>
+      </div>
+
+      <div
+        id="graph2"
+        class="w-full h-[600px] border border-gray-100 rounded-lg"
+      ></div>
+
+      <div class="mt-6 text-sm text-gray-500">
+        <p>Kelompok 5 - Grafika Komputer dan Visualisasi</p>
+      </div>
+    </main>
+
+    <footer class="w-full max-w-7xl mt-8 text-center text-gray-500 text-sm">
+      <p>&copy; 2025 GKV Kelompok 5. Semua hak cipta dilindungi.</p>
+    </footer>
+  </body>
+
+  <script src="lineChartProduction.js"></script>
+</html>
