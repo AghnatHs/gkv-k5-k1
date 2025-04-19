@@ -113,7 +113,7 @@ d3.csv(csvFileName)
     let provinces = [];
     let productivities = [];
     
-    // Calculate average productivity for each province
+    
     for (let province in provinceAverages) {
       let avg = provinceAverages[province];
       let avgProduction = avg.totalProduction / avg.count;
@@ -124,13 +124,13 @@ d3.csv(csvFileName)
       productivities.push(productivity);
     }
     
-    // Sort provinces by productivity (descending)
+    
     let sortedIndices = productivities.map((prod, idx) => ({ prod, idx })).sort((a, b) => b.prod - a.prod).map(item => item.idx);
     
     let sortedProvinces = sortedIndices.map(idx => provinces[idx]);
     let sortedProductivities = sortedIndices.map(idx => productivities[idx]);
     
-    // Create bar chart data
+    
     productivityData.push({
       x: sortedProvinces,
       y: sortedProductivities,
