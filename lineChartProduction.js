@@ -108,6 +108,58 @@ d3.csv(csvFileName)
     };
     
     Plotly.newPlot("graph2", avgScatterData, scatterLayout, config);
+
+    let productivityData = [];
+    let provinces = [];
+    let productivities = [];
+    
+    // Calculate average productivity for each province
+    for (let province in provinceAverages) {
+      let avg = provinceAverages[province];
+      let avgProduction = avg.totalProduction / avg.count;
+      let avgHarvestArea = avg.totalHarvestArea / avg.count;
+      let productivity = avgProduction / avgHarvestArea;
+      
+      provinces.push(province);
+      productivities.push(productivity);
+    }
+    
+    // Sort provinces by productivity (descending)
+    let sortedIndices = productivities.map((prod, idx) => ({ prod, idx })).sort((a, b) => b.prod - a.prod).map(item => item.idx);
+    
+    let sortedProvinces = sortedIndices.map(idx => provinces[idx]);
+    let sortedProductivities = sortedIndices.map(idx => productivities[idx]);
+    
+    // Create bar chart data
+    productivityData.push({
+      x: sortedProvinces,
+      y: sortedProductivities,
+      type: 'bar',
+      marker: {
+        color: 'rgb(60, 120, 216)',
+        opacity: 0.8
+      },
+      text: sortedProductivities.map(val => val.toFixed(2)),
+      textposition: 'auto'
+    });
+    
+    let barLayout = {
+      title: 'Rata-rata Produktivitas Padi per Provinsi di Sumatera (1993-2020)',
+      xaxis: {
+        title: 'Provinsi',
+        tickangle: -45
+      },
+      yaxis: {
+        title: 'Produktivitas (ton/ha)',
+        zeroline: true
+      },
+      font: { size: 16 },
+      margin: {
+        b: 100
+      }
+    };
+    
+    Plotly.newPlot("graph3", productivityData, barLayout, config);
   })
   .catch(function (error) {
     console.error(error);
