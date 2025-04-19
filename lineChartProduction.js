@@ -9,11 +9,11 @@ d3.csv(csvFileName)
     rows.forEach((row) => {
       let province = row["Provinsi"]?.trim();
       let year = row["Tahun"]?.trim();
-      let riceProduction = row["Produksi"]?.trim();
-      let harvestArea = row["LuasPanen"]?.trim();
-      let humidity = row["Kelembapan"]?.trim();
-      let avgTemperature = row["SuhuAvg"]?.trim();
-      let rainFall = row["CurahHujan"]?.trim();
+      let riceProduction = +row["Produksi"]?.trim();
+      let harvestArea = +row["LuasPanen"]?.trim();
+      let humidity = +row["Kelembapan"]?.trim();
+      let avgTemperature = +row["SuhuAvg"]?.trim();
+      let rainFall = +row["CurahHujan"]?.trim();
 
       if (!province || !year || isNaN(riceProduction) || isNaN(humidity) || isNaN(harvestArea) || isNaN(avgTemperature) || isNaN(rainFall)) return;
 
