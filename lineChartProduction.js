@@ -7,9 +7,13 @@ d3.csv(csvFileName)
     rows.forEach((row) => {
       let province = row["Provinsi"]?.trim();
       let year = row["Tahun"]?.trim();
-      let riceProduction = row["Produksi"]?.trim();
+      let riceProduction = +row["Produksi"]?.trim();
+      let harvestArea = +row["LuasPanen"]?.trim();
+      let humidity = +row["Kelembapan"]?.trim();
+      let avgTemperature = +row["SuhuAvg"]?.trim();
+      let rainFall = +row["CurahHujan"]?.trim();
 
-      if (!province || !year || isNaN(riceProduction)) return;
+      if (!province || !year || isNaN(riceProduction) || isNaN(humidity) || isNaN(harvestArea) || isNaN(avgTemperature) || isNaN(rainFall)) return;
 
       if (!provincesData[province]) {
         provincesData[province] = { x: [], y: [] };
@@ -17,6 +21,7 @@ d3.csv(csvFileName)
 
       provincesData[province].x.push(year);
       provincesData[province].y.push(riceProduction);
+
     });
 
     let data = Object.keys(provincesData).map((provinsi) => ({
@@ -39,6 +44,7 @@ d3.csv(csvFileName)
     let config = { responsive: true };
 
     Plotly.newPlot("graph", data, layout, config);
+
   })
   .catch(function (error) {
     console.error(error);

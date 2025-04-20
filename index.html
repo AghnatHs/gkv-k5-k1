@@ -31,7 +31,7 @@
       <div class="mb-4 flex flex-col md:flex-row justify-between items-center">
         <div class="mb-4 md:mb-0">
           <h2 class="text-xl font-semibold text-gray-800">
-            Visualisasi Data Produksi
+            Data Produksi 1993 - 2020
           </h2>
           <p class="text-gray-500 text-sm">
             Sumber:
@@ -53,7 +53,7 @@
       <div class="mb-4 flex flex-col md:flex-row justify-between items-center">
         <div class="mb-4 md:mb-0">
           <h2 class="text-xl font-semibold text-gray-800">
-            GRAPH 2
+            Hubungan Luas Panen dan Produksi
           </h2>
           <p class="text-gray-500 text-sm">
             Sumber:
@@ -72,15 +72,38 @@
         class="w-full h-[600px] border border-gray-100 rounded-lg"
       ></div>
 
+      <div class="mb-4 flex flex-col md:flex-row justify-between items-center">
+        <div class="mb-4 md:mb-0">
+          <h2 class="text-xl font-semibold text-gray-800">
+            Perbandingan Produktivitas (Produksi / Luas Panen)
+          </h2>
+          <p class="text-gray-500 text-sm">
+            Sumber:
+            <a
+              href="https://www.kaggle.com/datasets/ardikasatria/datasettanamanpadisumatera"
+              target="_blank"
+              >https://www.kaggle.com/datasets/ardikasatria/datasettanamanpadisumatera</a
+            >
+          </p>
+        </div>
+        <div id="legend-controls" class="flex gap-2"></div>
+      </div>
+
+      <div
+        id="graph3"
+        class="w-full h-[600px] border border-gray-100 rounded-lg"
+      ></div>
       <div class="mt-6 text-sm text-gray-500">
         <p>Kelompok 5 - Grafika Komputer dan Visualisasi</p>
       </div>
     </main>
 
     <footer class="w-full max-w-7xl mt-8 text-center text-gray-500 text-sm">
-      <p>&copy; 2025 GKV Kelompok 5. Semua hak cipta dilindungi.</p>
+      <p>&copy; 2025 GKV Kelompok 5.</p>
     </footer>
   </body>
 
   <script src="lineChartProduction.js"></script>
+  <script src="scatterplotProduction.js"></script>
+  <script src="barchartProductivity.js"></script>
 </html>
