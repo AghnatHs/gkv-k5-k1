@@ -61,28 +61,6 @@
       <div class="mb-4 flex flex-col md:flex-row justify-between items-center">
         <div class="mb-4 md:mb-0">
           <h2 class="text-xl font-semibold text-gray-800">
-            Hubungan Curah Hujan dan Produksi
-          </h2>
-          <p class="text-gray-500 text-sm">
-            Sumber:
-            <a
-              href="https://www.kaggle.com/datasets/ardikasatria/datasettanamanpadisumatera"
-              target="_blank"
-              >https://www.kaggle.com/datasets/ardikasatria/datasettanamanpadisumatera</a
-            >
-          </p>
-        </div>
-        <div id="legend-controls" class="flex gap-2"></div>
-      </div>
-
-      <div
-        id="graph4"
-        class="w-full h-[600px] border border-gray-100 rounded-lg"
-      ></div>
-
-      <div class="mb-4 flex flex-col md:flex-row justify-between items-center">
-        <div class="mb-4 md:mb-0">
-          <h2 class="text-xl font-semibold text-gray-800">
             Hubungan Luas Panen dan Produksi
           </h2>
           <p class="text-gray-500 text-sm">
@@ -123,6 +101,29 @@
         id="graph3"
         class="w-full h-[600px] border border-gray-100 rounded-lg"
       ></div>
+
+      <div class="mb-4 flex flex-col md:flex-row justify-between items-center">
+        <div class="mb-4 md:mb-0">
+          <h2 class="text-xl font-semibold text-gray-800">
+            Correlation Matrix
+          </h2>
+          <p class="text-gray-500 text-sm">
+            Sumber:
+            <a
+              href="https://www.kaggle.com/datasets/ardikasatria/datasettanamanpadisumatera"
+              target="_blank"
+              >https://www.kaggle.com/datasets/ardikasatria/datasettanamanpadisumatera</a
+            >
+          </p>
+        </div>
+        <div id="legend-controls" class="flex gap-2"></div>
+      </div>
+
+      <div
+        id="correlation-graph"
+        class="w-full h-[600px] border border-gray-100 rounded-lg"
+      ></div>
+
       <div class="mt-6 text-sm text-gray-500">
         <p>Kelompok 5 - Grafika Komputer dan Visualisasi</p>
       </div>
@@ -134,7 +135,7 @@
   </body>
 
   <script src="lineChartProduction.js"></script>
-  <script src="scatterplotRainfallProduction.js"></script>
   <script src="scatterplotProduction.js"></script>
   <script src="barchartProductivity.js"></script>
+  <script src="correlationMatrix.js"></script>
 </html>
